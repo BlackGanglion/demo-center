@@ -1,0 +1,124 @@
+body{
+	background-color: #5B95DE;
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+/* 头像反转 */
+.flip-container {
+	perspective: 1000;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+	-webkit-transform-style: rotateY(180deg);
+}
+
+.flipper {
+  width: 16%;
+	margin: 0px auto;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	position: relative;
+}
+
+.front, .back {
+  width: 100%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+}
+
+.back {
+	transform: rotateY(180deg);
+	-webkit-transform-style: rotateY(180deg);
+}
+
+$transitionTime: 0.2s;
+.purple-section{
+  color: #fff;
+  padding: 4% 10%;
+}
+.purple-section .heading-wrapper > h2{
+  margin-top: 0px;
+	-webkit-transition: all $transitionTime;
+	-moz-transition: all $transitionTime;
+	-ms-transition: all $transitionTime;
+}
+.purple-section .heading-wrapper > h2:hover{
+  font-size: 36px;
+}
+.purple-section .heading-wrapper{
+	margin-top: 17%;
+  text-align: center;
+}
+.purple-section .hr{
+  width: 60%;
+  background: #373259;
+}
+.purple-section .sub-heading{
+	margin-bottom: 20px;
+}
+.card{
+  min-height: 380px;
+  padding: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.card p{
+  letter-spacing: 1px;
+}
+
+@for $i from 1 to 7 {
+	.card:nth-child(#{$i}){
+	  background: rgba(0, 0, 0, 0.02 * $i);
+	}
+}
+
+a, a:visited, a:link{
+	text-decoration: none;
+	color: #fff;
+}
+a:hover{
+	text-decoration: none;
+	color: #ec971f;
+}
+.card h3{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+.card h3 a:hover{
+	font-size: 30px;
+	-webkit-transition: all $transitionTime;
+	-moz-transition: all $transitionTime;
+	-ms-transition: all $transitionTime;
+}
+ul li{
+	text-align: left;
+	font-size: 16px;
+	margin: 10px auto;
+}
+li p{
+	margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+	.flipper {
+		width: 40%;
+	}
+	.purple-section .heading-wrapper{
+		margin-top: 47%;
+	}
+	.purple-section{
+	  background-color: #5B95DE;
+	}
+}

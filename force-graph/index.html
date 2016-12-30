@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>社团引力测试</title>
+  <style type="text/css">
+    .factor {
+      border: 1px solid black;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 300px;
+      padding: 40px;
+      max-height: 300px;
+      overflow: auto;
+    }
+    .factor-item {
+      margin: 10px;
+    }
+    .tip {
+      font-size: 12px;
+      color: red;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>社团引力测试 - 运动轨迹</h1>
+  <svg width="1000" height="800"></svg>
+  <div class="factor">
+    <div class="factor-item">
+      选择数据集:
+      <select name="select" id="select">
+        <option value="data2">测试数据集</option>
+        <option value="data1">Dolphins网络数据集</option>
+        <option value="data4">Zachary网络数据集</option>
+        <option value="data3">五菱镜数据</option>
+        <option value="data5">测试数据集2</option>
+        <option value="data6">测试数据集3</option>
+        <option value="data7">测试数据集4</option>
+        <option value="data1-test">Dolphins网络数据集(新社团引力)</option>
+        <option value="data4-test">Zachary网络数据集(新社团引力)</option>
+        <option value="data8" selected>测试</option>
+      </select>
+    </div>
+    <hr />
+    <div class="factor-item">
+      迭代次数: <input id="count" type="text" placeholder="默认200" />
+    </div>
+    <div class="factor-item">
+      初始温度: <input id="temperature" type="text" placeholder="默认100" />
+    </div>
+    <div class="factor-item">
+      阈值温度: <input id="temperatureMin" type="text" placeholder="默认0.01" />
+      <div class="tip">(大于阈值温度，每次迭代温度下降2，小于下降0.01，直至0)</div>
+    </div>
+    <div class="factor-item">
+      斥力系数: <input id="cr" type="text" placeholder="默认1" />
+    </div>
+    <div class="factor-item">
+      引力系数: <input id="ca" type="text" placeholder="默认6" />
+    </div>
+    <div class="factor-item">
+      持续时间: <input id="lastTime" type="text" placeholder="默认20s" />
+      <div class="tip">(时间单位为s)</div>
+    </div>
+    <hr />
+    <div class="factor-item">
+      是否使用社团引力:
+      <input type="radio" id="isUseClub" name="isUseClub" checked>是
+      <input type="radio" id="isUseClub" name="isUseClub">否
+    </div>
+    <div class="factor-item">
+      社团中心数量: <input id="clubNumber" type="text" placeholder="默认4" />
+    </div>
+    <div class="factor-item">
+      社团引力系数: <input id="g" type="text" placeholder="默认100" />
+      <div class="tip">(图中黑点为社团引力中心点，鼠标移至社团引力中心点上可看到节点从属社团关系)</div>
+    </div>
+    <div class="factor-item">
+      社团中心斥力系数: <input id="gc" type="text" placeholder="默认60" />
+    </div>
+    <div class="factor-item">
+      模块度检测数值: <span class="modelValue"></span>
+    </div>
+    <button id="reRender">重新渲染</button>
+  </div>
+  <script src="./jquery.min.js"></script>
+  <script src="./forcegraph.js"></script>
+</body>
+</html>

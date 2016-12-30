@@ -1,0 +1,13 @@
+{
+  "name": "force-graph",
+  "version": "0.1.0",
+  "description": "force-graph",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel forcegraph.js -o main.js",
+    "start": "http-server"
+  },
+  "author": "BlackGanglion",
+  "license": "ISC"
+}
